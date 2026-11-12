@@ -11,4 +11,4 @@ if [ ! -f "./.ezproot/setup-complete" ]; then
 fi
 
 . .venv/bin/activate
-PD_PROOT_BIN=./bin/proot TERMUX__PREFIX=./usr TERMUX__HOME=~/ proot-distro "$@"
+PD_PROOT_BIN=$PWD/bin/proot TERMUX__PREFIX=$PWD/usr TERMUX__HOME=$PWD/home proot-distro "$@"
