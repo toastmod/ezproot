@@ -1,19 +1,22 @@
 # Download proot binary
 # https://proot-me.github.io/#downloads
-mkdir bin
-curl --output-directory ./bin -LO https://proot.gitlab.io/proot/bin/proot
+EZPROOT_PYTHON=python3.11
+set -e
+mkdir -p bin
+mkdir -p usr
+curl -o ./bin/proot -LO https://proot.gitlab.io/proot/bin/proot
 chmod +x ./bin/proot
 
 # Proot works!(?)
 ./bin/proot --version
 
 # Install proot-distro
-cd proot-distro
-python3 -m venv .venv
+$EZPROOT_PYTHON -m venv .venv
 . .venv/bin/activate
-pip install -e .
 
-mkdir containers
+# Install proot-distro
+cd proot-distro
+pip install -e .
 
 echo ""
 echo "Installation complete!"
