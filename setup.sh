@@ -15,7 +15,7 @@ $EZPROOT_PYTHON -m venv .venv
 . .venv/bin/activate
 
 # Install proot-distro
-cd proot-distro
+cd external/proot-distro
 pip install -e .
 
 echo ""
