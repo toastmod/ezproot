@@ -1,0 +1,3 @@
+[submodule "proot-distro"]
+	path = proot-distro
+	url = https://github.com/termux/proot-distro.git
