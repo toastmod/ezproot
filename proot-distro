@@ -1,0 +1,14 @@
+#!/bin/bash
+
+mkdir -p .ezproot
+
+if [ ! -f "./.ezproot/setup-complete" ]; then
+    echo "Setting up proot-distro for the first time..."
+    set -e
+    ./scripts/setup.sh
+    set +e
+    touch .ezproot/setup-complete
+fi
+
+. .venv/bin/activate
+PD_PROOT_BIN=./bin/proot TERMUX__PREFIX=./usr TERMUX__HOME=~/ proot-distro "$@"

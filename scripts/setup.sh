@@ -20,4 +20,4 @@ pip install -e .
 
 echo ""
 echo "Installation complete!"
-echo "Use 'proot-distro.sh' to install and log into a distribution."
+echo ""
